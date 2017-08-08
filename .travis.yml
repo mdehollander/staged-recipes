@@ -1,7 +1,11 @@
 # The language in this case has no bearing - we are going to be making use of conda.
 language: generic
 
-os: osx
+os:
+  - linux
+  - osx
+  - windows
+
 osx_image: xcode6.4
 
 sudo: false
