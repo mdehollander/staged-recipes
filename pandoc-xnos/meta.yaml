@@ -1,0 +1,68 @@
+package:
+  name: pandoc-xnos
+  version: "0.9"
+
+source:
+  fn: pandoc-xnos-0.9.tar.gz
+  url: https://pypi.python.org/packages/d6/23/91dc96f525653307640b538ffda8feb81a67ac5279566bd0f94a18043bf8/pandoc-xnos-0.9.tar.gz
+  md5: 83e64d32136bf633b58113a59f2c2515
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - pandoc-xnos = pandoc-xnos:main
+    #
+    # Would create an entry point called pandoc-xnos that calls pandoc-xnos.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pandocfilters >=1.4.0
+    - pandoc-attributes >=0.1.7
+    - psutil >=4.1.0
+
+  run:
+    - python
+    - pandocfilters >=1.4.0
+    - pandoc-attributes >=0.1.7
+    - psutil >=4.1.0
+
+test:
+  # Python imports
+  imports:
+    - pandocxnos
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/tomduck/pandoc-xnos
+  license: GNU General Public License v3 (GPLv3)
+  summary: 'Library code for the pandoc-fignos/eqnos/tablenos filters.'
+  license_family: GPL3
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

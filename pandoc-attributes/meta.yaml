@@ -1,24 +1,26 @@
 package:
-  name: pandoc-fignos
-  version: "0.20"
+  name: pandoc-attributes
+  version: "0.1.7"
 
 source:
-  fn: pandoc-fignos-0.20.tar.gz
-  url: https://pypi.python.org/packages/27/b6/6f7a1f34ba7c5215c87bf23ba39881ef98fc1bce52962463afb2c266eebe/pandoc-fignos-0.20.tar.gz
-  md5: 84104b92d0f4818be336f4ba47fb38ba
+  fn: pandoc-attributes-0.1.7.tar.gz
+  url: https://pypi.python.org/packages/c2/0a/442cc9237dc997cd88155bdcb54bf86e703e699881f4134ecb733ccd670c/pandoc-attributes-0.1.7.tar.gz
+  md5: 726dcac5ddfadd877db52683d0fe4848
+#  patches:
+   # List any patch files here
+   # - fix.patch
 
-build:
+# build:
   # noarch_python: True
   # preserve_egg_dir: True
-  entry_points:
+  # entry_points:
     # Put any entry points (scripts to be generated automatically) here. The
     # syntax is module:function.  For example
     #
-    # - pandoc-fignos = pandoc-fignos:main
+    # - pandoc-attributes = pandoc-attributes:main
     #
-    # Would create an entry point called pandoc-fignos that calls pandoc-fignos.main()
+    # Would create an entry point called pandoc-attributes that calls pandoc-attributes.main()
 
-    - pandoc-fignos = pandoc_fignos:main
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
@@ -28,25 +30,20 @@ requirements:
   build:
     - python
     - setuptools
-    - pandoc-xnos >=0.8.2
     - pandocfilters
-    - pandoc-attributes
 
   run:
     - python
-    - pandoc-xnos >=0.8.2
     - pandocfilters
-    - pandoc-attributes
 
-test:
+# test:
   # Python imports
   # imports:
 
-  commands:
+  # commands:
     # You can put test commands to be run here.  Use this to test that the
     # entry points work.
 
-    - pandoc-fignos --help
 
   # You can also put a file called run_test.py in the recipe that will be run
   # at test time.
@@ -56,7 +53,11 @@ test:
     # - nose
 
 about:
-  home: https://github.com/tomduck/pandoc-fignos
-  license: GNU General Public License v3 (GPLv3)
-  summary: 'Figure number filter for pandoc'
-  license_family: GPL3
+  home: http://github.com/aaren/pandoc-attributes
+  license: BSD 2-Clause
+  summary: 'An Attribute class to be used with pandocfilters'
+  license_family: BSD
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
